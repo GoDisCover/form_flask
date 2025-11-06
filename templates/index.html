@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <a class="btn btn-neutral" href="/add-new-mahasiswa">Add New Mahasigma</a>
+    <div class="overflow-x-auto">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>NAMA</th>
+                    <th>NPM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for mahasiswa in list_mahasiswa %}
+                    <td>{{mahasiswa.name}}</td>
+                    <td>{{mahasiswa.npm}}</td>
+                    </tr>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

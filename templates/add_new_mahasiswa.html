@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1 class="text-3xl font-bold underline">
+    Add New Mahasigma
+  </h1>
+  <div>
+    <form action="/add-new-mahasiswa" method="post">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="nama">
+      </div>
+      <div>
+        <label for="npm">npm</label>
+        <input type="text" name="npm" id="npm" placeholder="npm">
+      </div>
+      <button type="submit">Simpan</button>
+    </form>
+  </div>
+{% endblock %}
