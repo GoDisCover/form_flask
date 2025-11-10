@@ -1,19 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h1 class="text-3xl font-bold underline">
-    Add New Mahasigma
-  </h1>
-  <div>
-    <form action="/add-new-mahasiswa" method="post">
+<h1 class="text-3xl font-bold underline">
+  Add New Mahasigma
+</h1>
+<div>
+  <form action="/add-new-mahasiswa" method="post" enctype="multipart/form-data">
+    {{form.csrf_token}}
+    <div class="items-center">
       <div>
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" placeholder="nama">
+        {{form.name.label(class="block text-sm font-medium mb-1")}}
+        {{form.name(class="input input-info")}}
       </div>
       <div>
-        <label for="npm">npm</label>
-        <input type="text" name="npm" id="npm" placeholder="npm">
+        {{form.npm.label(class="block text-sm font-medium mb-1")}}
+        {{form.npm(class="input input-info")}}
       </div>
-      <button type="submit">Simpan</button>
-    </form>
-  </div>
+      <div>
+        {{form.profile_picture.label(class="block text-sm font-medium mb-1")}}
+        {{form.profile_picture(class="file-input file-input-info")}}
+      </div>
+      <button type="submit" class="btn btn-info mb-1 block m-2">Simpan</button>
+    </div>
+  </form>
+</div>
 {% endblock %}
